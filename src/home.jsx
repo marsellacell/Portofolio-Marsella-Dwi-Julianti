@@ -16,7 +16,8 @@ import {
   Briefcase,
   ExternalLink,
   Smartphone,
-  ArrowUpRight
+  ArrowUpRight,
+  Instagram
 } from 'lucide-react';
 
 const App = () => {
@@ -58,8 +59,7 @@ const App = () => {
     role: "Software Engineering & Visual Designer",
     email: "marselladwijulianti@gmail.com",
     linkedin: "https://linkedin.com/in/marsella-dwi-julianti-477b60257",
-    github: "https://github.com/marsellacell",
-    resume: "https://drive.google.com/file/d/1DbUGTGhxtS-WnlchOvvORuPQfP_jL04k/view?usp=sharing",
+    github: "https://github.com/marsellacell",    instagram: "https://www.instagram.com/mssellaaa_/",    resume: "https://drive.google.com/file/d/1DbUGTGhxtS-WnlchOvvORuPQfP_jL04k/view?usp=sharing",
     summary: "I’m a Software Engineering student who enjoys exploring web development and visual design. I believe that good design is not only about appearance, but also about how users experience and interact with a product. I pay close attention to layout, composition, and visual details to create clean and professional designs. At the moment, I’m focusing on improving my skills in UI/UX design and web development for dynamic applications."
   };
 
@@ -113,18 +113,20 @@ const App = () => {
       title: "BanyuGrowth",
       category: "Mobile Application",
       desc: "BanyuGrowth — a team-built mobile application supporting UMKM in Banyumas. Core functions: digital registration platform for UMKM, structured business data collection, easy access for business owners, and support for local UMKM's digital transformation.",
-      link: "https://github.com/reessi/TUBES_PPB_BanyuGrowth/tree/main/banyugrowth",
+      link: "https://github.com/reessi/TUBES_PPB_BanyuGrowth/tree/main/babyggrowth",
       image: "/assets/BanyuGrowth.jpg",
       tech: "Flutter",
       icon: <Smartphone size={20} className="text-[#B4A697]" />
     },
     {
-      title: "Web Explorations",
-      category: "Frontend Development",
-      desc: "A collection of web components and layouts focusing on responsive design and modern CSS techniques.",
-      link: profile.github,
+      title: "BanyuGrowth Web Platform",
+      category: "Web Development",
+      desc: "A web-based digitalization platform for UMKM data collection and registration in Banyumas. Developed as part of Web Development coursework, enabling seamless registration and data management for local businesses.",
+      link: "https://github.com/viona123/banyugrowth_final",
+      image: "/assets/banyugrowthweb.jpg",
+      tech: "PHP & Laravel",
       icon: <Code size={20} className="text-[#B4A697]" />
-    }
+    },
     ,
     {
       title: "Java OOP Essentials",
@@ -349,7 +351,7 @@ const App = () => {
             
             <div className="border-l-2 border-[#B4A697] pl-8">
               <h3 className="text-xl font-medium text-[#2D2D2D]">Jaringan Sistem Komputer dan Telekomunikasi</h3>
-              <p className="text-sm text-[#7A7A7A] mt-1 font-medium">SMKS Al-Furqon Bantarkawung, Bumiayu</p>
+              <p  className="text-sm text-[#7A7A7A] mt-1 font-medium">SMKS Al-Furqon Bantarkawung, Bumiayu</p>
               <p className="text-xs text-[#AFAFAF] mt-2 italic">Jul 2020 — Mei 2023</p>
               <p className="text-sm text-[#8C8C8C] leading-relaxed font-light mt-3">
                 Vocational diploma in Computer Network and Telecommunications Systems. Named Best Graduate of the department in 2023 with consistent academic ranking in top 3 for 5 semesters. Served 2 years as treasurer and IT coordinator in school organization, and actively participated as an anti-bullying change agent.
@@ -447,6 +449,9 @@ const App = () => {
               </a>
               <a href={profile.github} target="_blank" rel="noopener noreferrer" className="p-4 bg-white rounded-2xl border border-[#E8E2D9] hover:shadow-md transition-all text-[#B4A697]">
                 <Github size={20} />
+              </a>
+              <a href={profile.instagram} target="_blank" rel="noopener noreferrer" className="p-4 bg-white rounded-2xl border border-[#E8E2D9] hover:shadow-md transition-all text-[#B4A697]">
+                <Instagram size={20} />
               </a>
             </div>
           </div>

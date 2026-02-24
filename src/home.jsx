@@ -17,7 +17,8 @@ import {
   ExternalLink,
   Smartphone,
   ArrowUpRight,
-  Instagram
+  Instagram,
+  Loader2
 } from 'lucide-react';
 
 const App = () => {
@@ -25,8 +26,19 @@ const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [copied, setCopied] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
+  const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setMounted(true);
+    }, 800);
+    
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     
@@ -49,8 +61,10 @@ const App = () => {
     window.addEventListener('scroll', handleScrollSpy);
     
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleScrollSpy);
+      document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
 
@@ -157,6 +171,18 @@ const App = () => {
       icon: <Code size={20} className="text-[#B4A697]" />
     },
   ];
+
+  // Loading screen
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#F9F8F6] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="w-8 h-8 text-[#B4A697] animate-spin" />
+          <span className="text-xs font-medium tracking-widest text-[#B4A697] uppercase">Loading</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#F9F8F6] text-[#4A4A4A] selection:bg-[#E8E2D9]">
@@ -276,7 +302,7 @@ const App = () => {
                       {/* Icon Badge */}
                       <div 
                         className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                        style={{ backgroundColor: exp.iconColor, backgroundColor: `${exp.iconColor}15` }}
+                        style={{ backgroundColor: `${exp.iconColor}15` }}
                       >
                         <IconComponent size={24} style={{ color: exp.iconColor }} />
                       </div>

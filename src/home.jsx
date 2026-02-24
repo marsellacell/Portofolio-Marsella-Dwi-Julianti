@@ -195,7 +195,7 @@ const App = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#F9F8F6]/80 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-8'}`}>
         <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
           <div className="text-lg font-semibold tracking-tight text-[#2D2D2D]">
-            M<span className="text-[#B4A697]">.</span>
+            marselladwijulianti
           </div>
           
           <div className="hidden md:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest text-[#8C8C8C]">
